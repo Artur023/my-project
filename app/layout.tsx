@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   description: "Never gonna make you cry, never gonna say goodbye.",
   openGraph: {
     type: "website",
-    url: "https://yourwebsite.com",
+    url: "https://my-project-teal-zeta.vercel.app/",
     title: "Never Gonna GYU",
     description: "Never gonna make you cry, never gonna say goodbye..",
     images: [
       {
-        url: "https://yourwebsite.com/og-image.jpg",
+        url: "https://my-project-teal-zeta.vercel.app/",
         width: 1200,
         height: 630,
         alt: "Never Gonna GYU",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Never Gonna GYU",
     description: "Never gonna make you cry, never gonna say goodbye..",
-    images: ["https://yourwebsite.com/og-image.jpg"],
+    images: ["https://my-project-teal-zeta.vercel.app/"],
   },
 };
 
