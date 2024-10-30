@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://my-project-teal-zeta.vercel.app/",
     title: "Never Gonna GYU",
-    description: "Never gonna make you cry, never gonna say goodbye..",
+    description: "Never gonna make you cry, never gonna say goodbye.",
     images: [
       {
         url: "https://my-project-teal-zeta.vercel.app/",
