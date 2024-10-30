@@ -11,7 +11,7 @@ export default function Header() {
   const buttonLink = isContactPage ? "/" : "/contact";
 
   return (
-    <AppBar position="static" color="default">
+    <AppBar position="sticky" color= "default">
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Never Gonna GYU

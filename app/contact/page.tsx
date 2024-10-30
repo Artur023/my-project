@@ -29,8 +29,8 @@ const ContactForm: React.FC = () => {
     <Box sx={{ padding: "20px", maxWidth: "500px", margin: "auto" }}>
       {!submitted ? (
         <>
-          <Typography variant="h4" gutterBottom>
-            Contact Us
+          <Typography variant="h4" gutterBottom textAlign={"center"}>
+            Please fill out the form
           </Typography>
           <form onSubmit={handleSubmit}>
             <StyledTextField
