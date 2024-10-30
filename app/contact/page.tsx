@@ -1,19 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { TextField, Typography } from "@mui/material";
-import {
-  Container,
-  FormWrapper,
-  SubmitButton,
-} from "../../styles/ContactPageStyles";
+import StyledTextField from "../../styles/StyledTextField";
+import { Button, Box, Typography } from "@mui/material";
 
-const ContactPage: React.FC = () => {
+const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
@@ -23,30 +20,20 @@ const ContactPage: React.FC = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      setSubmitted(true);
-    }
+    setSubmitted(true);
   };
 
   return (
-    <Container>
+    <Box sx={{ padding: "20px", maxWidth: "500px", margin: "auto" }}>
       {!submitted ? (
         <>
           <Typography variant="h4" gutterBottom>
             Contact Us
           </Typography>
-          <FormWrapper onSubmit={handleSubmit}>
-            <TextField
+          <form onSubmit={handleSubmit}>
+            <StyledTextField
               label="Name"
               name="name"
               value={formData.name}
@@ -55,7 +42,7 @@ const ContactPage: React.FC = () => {
               required
               margin="normal"
             />
-            <TextField
+            <StyledTextField
               label="Email"
               name="email"
               value={formData.email}
@@ -65,7 +52,7 @@ const ContactPage: React.FC = () => {
               margin="normal"
               type="email"
             />
-            <TextField
+            <StyledTextField
               label="Message"
               name="message"
               value={formData.message}
@@ -76,16 +63,24 @@ const ContactPage: React.FC = () => {
               multiline
               rows={4}
             />
-            <SubmitButton type="submit">Submit</SubmitButton>
-          </FormWrapper>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+              sx={{ marginTop: "20px" }}
+            >
+              Submit
+            </Button>
+          </form>
         </>
       ) : (
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h5" gutterBottom>
           Thank you for your interest, {formData.name}!
         </Typography>
       )}
-    </Container>
+    </Box>
   );
 };
 
-export default ContactPage;
+export default ContactForm;
