@@ -1,61 +1,83 @@
+"use client"
 import React from "react";
 import Link from "next/link";
+import { Button } from "@mui/material";
+import {
+  Container,
+  MainSection,
+  Content,
+  Title,
+  Paragraph,
+  VideoContainer,
+  GridSection,
+  Grid,
+  GridItem,
+  FooterSection,
+} from "../styles/HomeStyles";
 
 const Home: React.FC = () => (
-    <div style={{ padding: "20px" }}>
-        <section style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "40px" }}>
-            <div>
-                <h1>Most important title on the page</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum ultricies, sem urna convallis metus, vel suscipit nibh lacus tincidunt ante.</p>
-            </div>
-            <div style={{ width: "50%", position: "relative", paddingBottom: "28.25%", height: 0, overflow: "hidden", maxWidth: "100%" }}>
-                <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%"
-                    }}
-                ></iframe>
-            </div>
-        </section>
+  <Container>
+    <MainSection>
+      <Content>
+        <Title>Most important title on the page</Title>
+        <Paragraph>
+          We're no strangers to love. You know the rules and so do I. A full
+          commitment's what I'm thinking of. You wouldn't get this from any
+          other guy.
+        </Paragraph>
+      </Content>
+      <VideoContainer>
+        <iframe
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="YouTube video Rick Astley"
+          frameBorder="0"
+          allowFullScreen
+        ></iframe>
+      </VideoContainer>
+    </MainSection>
 
-        <section style={{ textAlign: "center", marginBottom: "40px" }}>
-            <h2>Also very important title</h2>
-            <div style={{ display: "flex", justifyContent: "space-around", marginTop: "20px" }}>
-                {[...Array(3)].map((_, index) => (
-                    <div key={index} style={{ maxWidth: "200px", textAlign: "center" }}>
-                        <h3>Title</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum.</p>
-                    </div>
-                ))}
-            </div>
-            <Link href="/contact">
-                <button style={{ marginTop: "20px", padding: "10px 20px", backgroundColor: "#333", color: "#fff", border: "none", cursor: "pointer" }}>
-                    Contact us
-                </button>
-            </Link>
-        </section>
+    <GridSection>
+      <h2>Also very important title</h2>
+      <Grid>
+        {[...Array(6)].map((_, index) => (
+          <GridItem key={index}>
+            <h3>Title</h3>
+            <p>
+              Never gonna give you up, never gonna let you down, never gonna run
+              around and desert you. Never gonna make you cry, never gonna say
+              goodbye, never gonna tell a lie and hurt you.
+            </p>
+          </GridItem>
+        ))}
+      </Grid>
+      <Link href="/contact">
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{
+            marginTop: { xs: "10px", sm: "20px", md: "30px" },
+          }}
+        >
+          Contact us
+        </Button>
+      </Link>
+    </GridSection>
 
-        <section style={{ backgroundColor: "#f1f1f1", padding: "20px", textAlign: "center" }}>
-            <h2>Less important title</h2>
-            <Link href="/contact">
-                <button style={{ marginTop: "20px", padding: "10px 20px", backgroundColor: "#333", color: "#fff", border: "none", cursor: "pointer" }}>
-                    Contact us
-                </button>
-            </Link>
-        </section>
-
-        <footer style={{ marginTop: "40px", textAlign: "center" }}>
-            <p>Some Company 2024</p>
-        </footer>
-    </div>
+    <FooterSection>
+      <h2>Less important title</h2>
+      <Link href="/contact">
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{
+            marginTop: { xs: "10px", sm: "20px", md: "30px" },
+          }}
+        >
+          Contact us
+        </Button>
+      </Link>
+    </FooterSection>
+  </Container>
 );
 
 export default Home;

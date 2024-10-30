@@ -1,6 +1,12 @@
 "use client";
+
 import React, { useState } from "react";
-import { TextField, Button, Box, Typography } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
+import {
+  Container,
+  FormWrapper,
+  SubmitButton,
+} from "../../styles/ContactPageStyles";
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +25,6 @@ const ContactPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Отправка данных на бэкенд
     const response = await fetch("/api/contact", {
       method: "POST",
       headers: {
@@ -34,16 +39,13 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <Box sx={{ padding: "20px" }}>
+    <Container>
       {!submitted ? (
         <>
           <Typography variant="h4" gutterBottom>
             Contact Us
           </Typography>
-          <form
-            onSubmit={handleSubmit}
-            style={{ maxWidth: "400px", margin: "0 auto" }}
-          >
+          <FormWrapper onSubmit={handleSubmit}>
             <TextField
               label="Name"
               name="name"
@@ -74,23 +76,15 @@ const ContactPage: React.FC = () => {
               multiline
               rows={4}
             />
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              fullWidth
-              style={{ marginTop: "20px" }}
-            >
-              Submit
-            </Button>
-          </form>
+            <SubmitButton type="submit">Submit</SubmitButton>
+          </FormWrapper>
         </>
       ) : (
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h4" gutterBottom>
           Thank you for your interest, {formData.name}!
         </Typography>
       )}
-    </Box>
+    </Container>
   );
 };
 

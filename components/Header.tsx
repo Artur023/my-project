@@ -14,7 +14,7 @@ export default function Header() {
     <AppBar position="static" color="default">
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          Some Company
+          Never Gonna GYU
         </Typography>
         <Link href={buttonLink} passHref>
           <Button variant="contained" color="primary">
