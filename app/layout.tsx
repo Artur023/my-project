@@ -23,7 +23,14 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Never Gonna GYU",
     description: "Never gonna make you cry, never gonna say goodbye.",
-    images: ["https://my-project-teal-zeta.vercel.app/og-image.jpg"],
+    images: [
+      {
+        url: "https://my-project-teal-zeta.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Never Gonna GYU",
+      },
+    ],
   },
 };
 
