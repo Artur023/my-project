@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Never Gonna GYU",
-    description: "Never gonna make you cry, never gonna say goodbye..",
+    description: "Never gonna make you cry, never gonna say goodbye.",
     images: ["https://my-project-teal-zeta.vercel.app/image.jpg"],
   },
 };
