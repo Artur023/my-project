@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Never gonna make you cry, never gonna say goodbye.",
     images: [
       {
-        url: "https://my-project-teal-zeta.vercel.app/og-image.jpg",
+        url: "https://my-project-teal-zeta.vercel.app/image.jpg",
         width: 1200,
         height: 630,
         alt: "Never Gonna GYU",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Never Gonna GYU",
     description: "Never gonna make you cry, never gonna say goodbye.",
     images: ["https://my-project-teal-zeta.vercel.app/image.jpg"],
