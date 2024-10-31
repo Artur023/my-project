@@ -1,30 +1,47 @@
+import type { Metadata } from "next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+export const metadata: Metadata = {
+  title: "Never Gonna GYU - Welcome",
+  description: "Never gonna make you cry, never gonna say goodbye.",
+  openGraph: {
+    type: "website",
+    url: "https://my-project-teal-zeta.vercel.app/",
+    title: "Never Gonna GYU",
+    description: "Never gonna make you cry, never gonna say goodbye.",
+    images: [
+      {
+        url: "https://my-project-teal-zeta.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Never Gonna GYU",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Never Gonna GYU",
+    description: "Never gonna make you cry, never gonna say goodbye.",
+    images: [
+      {
+        url: "https://my-project-teal-zeta.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Never Gonna GYU",
+      },
+    ],
+  },
+};
+
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <head>
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://my-project-teal-zeta.vercel.app/" />
-        <meta property="og:title" content="Never Gonna GYU" />
-        <meta property="og:description" content="Never gonna make you cry, never gonna say goodbye." />
-        <meta property="og:image" content="https://my-project-teal-zeta.vercel.app/og-image.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Never Gonna GYU" />
-        <meta name="twitter:description" content="Never gonna make you cry, never gonna say goodbye." />
-        <meta name="twitter:image" content="https://my-project-teal-zeta.vercel.app/og-image.jpg" />
-        <meta name="twitter:image:width" content="1200" />
-        <meta name="twitter:image:height" content="630" />
-        <meta name="twitter:image:alt" content="Never Gonna GYU" />
-      </head>
+      <head></head>
       <body>
         <Header />
         <main>{children}</main>
