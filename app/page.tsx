@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import LiteYouTubeEmbed from "../components/LiteYouTubeEmbed";
 import Head from "next/head";
 import Link from "next/link";
 import { Button } from "@mui/material";
@@ -49,10 +48,13 @@ const Home: React.FC = () => {
             </Paragraph>
           </Content>
           <VideoContainer>
-            <LiteYouTubeEmbed
-              videoId="dQw4w9WgXcQ"
-              title="Never Gonna Give You Up by Rick Astley"
-            />
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="YouTube video Rick Astley"
+              frameBorder="0"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
           </VideoContainer>
         </MainSection>
 
