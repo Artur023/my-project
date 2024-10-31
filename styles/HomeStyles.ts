@@ -11,7 +11,10 @@ export const MainSection = styled.section`
   margin-bottom: 40px;
   gap: 20px;
   padding: 20px;
-  background-color: #f5f5f5;
+  background: rgba(255, 255, 255, 0.1); /* Прозрачный фон */
+  backdrop-filter: blur(10px); /* Эффект размытия */
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 768px) {
     flex-direction: column;
