@@ -11,8 +11,8 @@ export const MainSection = styled.section`
   margin-bottom: 40px;
   gap: 20px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.1); /* Прозрачный фон */
-  backdrop-filter: blur(10px); /* Эффект размытия */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px); 
   border-radius: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
@@ -72,6 +72,15 @@ export const Grid = styled.div`
 
 export const GridItem = styled.div`
   text-align: left;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px); 
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const FooterSection = styled.section`
